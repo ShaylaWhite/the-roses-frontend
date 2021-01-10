@@ -1,24 +1,18 @@
-import React from 'react';
 
+import React from 'react';
+import {connect} from 'react-redux'
+import GardensContainer from './containers/GardensContainer'
 
 class App extends React.Component {
 
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/gardens', {
-       method: 'GET'
-  })  
-    .then(response => response.json())
-    .then(data => console.log(data))
+  render() {
+    return (
+      <div className="App">
+        <GardensContainer/>
+      </div>
+    );
   }
-
-render() {
-  return (
-    <div className="App">
-    App
-    </div>
-  );
 }
 
-}
 
-export default App;
+export default connect()(App);
