@@ -1,4 +1,6 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {addGarden} from '../actions/addGarden'
 
 class GardenInput extends React.Component {
 
@@ -14,10 +16,20 @@ class GardenInput extends React.Component {
             })
           }
 
+          handleSubmit = (event) => {
+            event.preventDefault()
+            this.props.addGarden(this.state)
+            this.setState({
+                name: '', 
+                feels: '',
+                 date: ''
+            })
+          }
+
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Name Your Garden:</label>
                     <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/>
                     <br/>
@@ -28,6 +40,9 @@ class GardenInput extends React.Component {
                     <br/>
                     <label>Date</label>
                     <input type='date' placeholder='Date' value={this.state.date} name="date" onChange={this.handleChange}/>
+                    <input type="submit"/>
+
+
                 </form>
             </div>
         )
@@ -36,4 +51,4 @@ class GardenInput extends React.Component {
 
 }
 
-export default GardenInput
+export default connect(null, {addGarden})(GardenInput)

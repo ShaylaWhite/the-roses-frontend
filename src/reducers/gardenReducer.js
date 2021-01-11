@@ -3,6 +3,9 @@ export default function gardenReducer(state = {gardens: []}, action) {
     switch (action.type) {
         case 'FETCH_GARDENS':
             return {gardens: action.payload}
+            case 'ADD_GARDEN':
+                return {...state, gardens: [...state.gardens, action.payload]}
+
             default:
                 return state
 
