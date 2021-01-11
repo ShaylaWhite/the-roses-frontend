@@ -5,7 +5,9 @@ const Gardens = (props) => {
 return (
 
     <div>
-        {props.gardens.map(garden => <li key={garden.id}> {garden.name} - {garden.name} </li> )}
+        <br/>
+        {props.gardens.map(garden => <li key={garden.id}>  <h1><b>{garden.name}</b> <br/></h1> - posted - {garden.date} </li> )}
+        <br/>
     </div>
 
     )
