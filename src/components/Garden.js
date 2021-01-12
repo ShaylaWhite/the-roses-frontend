@@ -1,7 +1,12 @@
 import React from 'react'
 import Garden from './Garden'
 
-const Gardens = (props) => {
+const Garden = (props) => {
+
+   let garden = props.gardens[props.match.params.id - 1]
+
+
+
 
     return {
     <div>
