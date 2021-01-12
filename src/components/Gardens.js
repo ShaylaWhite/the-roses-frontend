@@ -10,13 +10,12 @@ return (
     {props.gardens.map(garden =>
       <li key={garden.id}>
         <Link to={`/gardens/${garden.id}`}>{garden.name} - {garden.feels}  </Link>
-         <br/>
-         {garden.date} 
       </li> )}
   </div>
 
 )
 
-export default Gardens 
+    }
 
-//props information passed from the garden container  to the child component of gardens 
+    export default Gardens
+

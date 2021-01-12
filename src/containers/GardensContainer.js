@@ -16,9 +16,11 @@ class GardensContainer extends React.Component {
     render() {
         return (
             <div>
+              <Switch>
               <Route path='/gardens/new' component={GardenInput}/>
               <Route path='/gardens/:id' render={(routerProps) => <Garden {...routerProps} gardens={this.props.gardens}/>}/>
-              <Route path='/gardens' render={(routerProps) => <Gardens {...routerProps} accounts={this.props.gardens}/>}/>
+              <Route path='/gardens' render={(routerProps) => <Gardens {...routerProps} gardens={this.props.gardens}/>}/>
+              </Switch>
             </div>
         )
     }

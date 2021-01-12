@@ -1,20 +1,25 @@
 import React from 'react'
-import Garden from './Garden'
+
+import {Redirect} from 'react-router-dom'
+
 
 const Garden = (props) => {
+   
+    console.log(props)
 
-   let garden = props.gardens[props.match.params.id - 1]
+  let garden = props.gardens[props.match.params.id - 1]
+  console.log(garden)
+
+  return (
+
+    <li>
+        {garden ? null : <Redirect to='/gardens/>'}
+        {account ? account.name : null} - {account ? account.balance : null}
+    </li>
+ 
+    )
 
 
-
-
-    return {
-    <div>
-        {props.gardens.map(garden => 
-        <ol key={garden.id}><Garden /></ol>)} 
-    </div>
-
-)
 }
 
-export default Gardens
+export default Garden
