@@ -17,7 +17,17 @@ class RoseInput extends React.Component {
           [event.target.name]: event.target.value
         })
       }
-    
+
+
+    handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.addRose(this.state, this.props.account.id)
+    this.setState({
+        petals: '',
+        thorns: '',
+        water: ''
+    })
+  }
 
     render() {
         return (
