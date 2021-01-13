@@ -12,7 +12,12 @@ class RoseInput extends React.Component {
         water: ''
       }
     
-
+      handleChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        })
+      }
+    
 
     render() {
         return (
@@ -23,22 +28,20 @@ class RoseInput extends React.Component {
             <br/>
               <label>What are you (highlights) petals for today?</label>
               <br/>
-               <input type="textarea" name="petals" value={this.state.petals}/>
+               <input type="textarea" name="petals" value={this.state.petals} onChange={this.handleChange}/>
               <br/>
               <br/>
               
               <label>What are you (lows) thorns for today?</label>
               <br/>
-               <input type="textarea" name="thorns" value={this.state.thorns}/>
+               <input type="textarea" name="thorns" value={this.state.thorns} onChange={this.handleChange}/>
 
                <br/>
               <br/>
               
               <label>How can you water your garden today?</label>
               <br/>
-               <input type="text" name="water" value={this.state.water}/>
-
-
+               <input type="text" name="water" value={this.state.water} onChange={this.handleChange}/>
 
               <input type="submit"/>
             </form>
@@ -54,9 +57,3 @@ export default connect(null)(RoseInput)
 
 
 
-
-
-
-
-
-export default GardenInput
