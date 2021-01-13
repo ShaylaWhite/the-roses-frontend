@@ -9,7 +9,7 @@ class RosesContainer extends React.Component {
     return (
       <div>
           <RoseInput garden={this.props.garden}/><br/>
-          <Roses Roses={this.props.garden && this.props.garden.Roses}/>
+          <Roses roses={this.props.garden && this.props.garden.roses}/>
       </div>
 
     )
@@ -18,4 +18,4 @@ class RosesContainer extends React.Component {
 
 }
 
-export default RosesContainer
+export default RosesContainer 

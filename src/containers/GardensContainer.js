@@ -1,8 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Route} from 'react-router-dom'
-import {fetchGardens} from '../actions/fetchGardens'
+import {Route, Switch} from 'react-router-dom'
 import Gardens from '../components/Gardens'
+
+import {fetchGardens} from '../actions/fetchGardens'
+import Garden from '../components/Gardens'
 import GardenInput from '../components/GardenInput'
 
 

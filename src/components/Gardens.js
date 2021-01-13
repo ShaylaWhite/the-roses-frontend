@@ -9,7 +9,7 @@ return (
     <div>
     {props.gardens.map(garden =>
       <li key={garden.id}>
-        <Link to={`/gardens/${garden.id}`}>{garden.name} - {garden.feels}  </Link>
+        <Link to={`/gardens/${garden.id}`}>{garden.name}</Link>
       </li> )}
   </div>
 
