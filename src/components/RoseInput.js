@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {addRose} from '../actions/addRose'
 
 
 
@@ -62,7 +63,7 @@ class RoseInput extends React.Component {
     }
     
 
-export default connect(null)(RoseInput)
+export default connect(null, {addRose})(RoseInput)
 
 
 
