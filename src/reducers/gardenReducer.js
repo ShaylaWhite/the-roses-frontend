@@ -15,6 +15,17 @@ export default function gardenReducer(state = {gardens: []}, action) {
                   }) 
                   return {...state, gardens: gardens}
 
+                  case 'DELETE_ROSE':
+                    let gardenstwo = state.gardens.map(garden => {
+                      if (garden.id === action.payload.id ) {
+                        return action.payload
+                      } else {
+                        return garden
+                      }
+                    })
+                    return {...state, gardens: gardenstwo}
+        
+
             default:
                 return state
 

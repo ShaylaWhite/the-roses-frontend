@@ -4,31 +4,37 @@ import {addRose} from '../actions/addRose'
 
 
 
-class RoseInput extends React.Component {
+class RoseInput  extends React.Component {
 
-
-    state = {
-        petals: '',
-        thorns: '',
-        water: ''
-      }
-    
-      handleChange = (event) => {
+    constructor(){
+        super()
+            this.state = {
+            petals: '',
+            thorns: '',
+            water: ''
+            }
+  
+    }
+ 
+    handleChange = (e) => {
+        e.preventDefault()
         this.setState({
-          [event.target.name]: event.target.value
+            [e.target.name]: e.target.value
         })
-      }
+    }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.addRose(this.state, this.props.garden.id)
+        alert('Successfully Added')
+        this.setState({
+            petals: '',
+            thorns: '',
+            water: ''
+        })
 
-    handleSubmit = (event) => {
-    event.preventDefault()
-    this.props.addRose(this.state, this.props.garden.id)
-    this.setState({
-        petals: '',
-        thorns: '',
-        water: ''
-    })
-  }
+    }
+
 
     render() {
         return (
@@ -39,13 +45,13 @@ class RoseInput extends React.Component {
             <br/>
               <label>What are you (highlights) petals for today?</label>
               <br/>
-               <input type="textarea" name="petals" value={this.state.petals} onChange={this.handleChange}/>
+               <input type="text" name="petals" value={this.state.petals} onChange={this.handleChange}/>
               <br/>
               <br/>
               
               <label>What are you (lows) thorns for today?</label>
               <br/>
-               <input type="textarea" name="thorns" value={this.state.thorns} onChange={this.handleChange}/>
+               <input type="text" name="thorns" value={this.state.thorns} onChange={this.handleChange}/>
 
                <br/>
               <br/>

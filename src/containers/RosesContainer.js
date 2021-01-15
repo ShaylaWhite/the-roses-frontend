@@ -18,4 +18,4 @@ class RosesContainer extends React.Component {
 
 }
 
-export default RosesContainer 
+export default RosesContainer

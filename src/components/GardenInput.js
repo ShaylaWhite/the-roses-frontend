@@ -4,27 +4,36 @@ import {addGarden} from '../actions/addGarden'
 
 class GardenInput extends React.Component {
 
-    state = {
-        name: '', 
-        feels: '',
-         date: ''
-        }
+    constructor(props){  
+        super(props);  
 
-        handleChange = (event) => {
-            this.setState({
-              [event.target.name]: event.target.value
-            })
-          }
+        this.state = {  
+             name: '',
+             feels: '',
+             date: ''  
+          } 
+      } 
 
-          handleSubmit = (event) => {
-            event.preventDefault()
-            this.props.addGarden(this.state)
-            this.setState({
-                name: '', 
-                feels: '',
-                 date: ''
-            })
-          }
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) =>{
+        e.preventDefault()
+        this.props.addGarden(this.state)
+        alert('Garden Successfully Added')
+        //reset state
+        this.setState({
+            name: '',
+            feels: '',
+            date: ''
+        })
+        console.log(this)
+        
+
+    }
 
     render() {
         return (

@@ -1,20 +1,25 @@
 import React from 'react'
-//import {Route, Link} from 'react-router-dom'
-//import Garden from './Garden'
+import {connect} from 'react-redux'
+import {deleteRose} from '../actions/deleteRose'
 
-const Gardens = (props) => {
+class Roses extends React.Component {
 
-    console.log(props.roses)
+state = {}
 
-return (
+ handleDelete = (rose) => {
+    this.props.deleteRose(rose.id, rose.garden_id)
+  }
 
-    <div>
-    {this.props.roses && props.roses.map(rose =>
-      <li key={rose.id}>{rose.petals} - {rose.thorns} - {rose.water} </li>
 
-    )}
-  </div>
-)
-    }
+render() {
+  return (
+      <div>
+        {this.props.roses && this.props.roses.map(rose =>
+          <li key={rose.id}>{rose.petals} - {rose.thorns} - {rose.water} <button onClick={() => this.handleDelete(rose)}>Delete</button></li>
+        )}
+      </div>
+    )
+  }
+}
 
-    export default Gardens
+export default connect(null, {deleteRose})(Roses)
