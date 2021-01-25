@@ -1,4 +1,3 @@
-
 import React from 'react'
 import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
@@ -7,6 +6,7 @@ import Gardens from '../components/Gardens'
 import Garden from '../components/Garden'
 import GardenInput from '../components/GardenInput'
 import NavBar from '../components/NavBar'
+
 
 class GardensContainer extends React.Component {
 
@@ -17,7 +17,8 @@ class GardensContainer extends React.Component {
     render() {
         return (
             <div>
-              <NavBar/>
+            <NavBar/>
+
               <Switch>
                 <Route path='/gardens/new' component={GardenInput}/>
                 <Route path='/gardens/:id' render={(routerProps) => <Garden {...routerProps} gardens={this.props.gardens}/>}/>

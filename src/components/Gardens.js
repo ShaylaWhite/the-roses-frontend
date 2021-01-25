@@ -4,6 +4,7 @@ import {Route, Link} from 'react-router-dom'
 
 
 const Gardens = (props) => {
+debugger
 
          return (
     <div>
@@ -17,3 +18,7 @@ const Gardens = (props) => {
 }
 
 export default Gardens
+
+// functional component we have to pass the arguments in as a arguement 
+
+// basically a function 

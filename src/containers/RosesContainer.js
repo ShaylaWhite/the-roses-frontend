@@ -6,6 +6,7 @@ class RosesContainer extends React.Component {
 
 
   render() {
+
     return (
       <div>
           <RoseInput garden={this.props.garden}/><br/>

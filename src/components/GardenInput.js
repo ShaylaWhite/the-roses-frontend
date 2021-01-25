@@ -3,16 +3,14 @@ import {connect} from 'react-redux'
 import {addGarden} from '../actions/addGarden'
 
 class GardenInput extends React.Component {
+ 
 
-    constructor(props){  
-        super(props);  
-
-        this.state = {  
+        state = {  
              name: '',
              feels: '',
              date: ''  
           } 
-      } 
+      
 
     handleChange = (e) => {
         this.setState({
@@ -20,19 +18,14 @@ class GardenInput extends React.Component {
         })
     }
 
-    handleSubmit = (e) =>{
+    handleSubmit = (e) => {
         e.preventDefault()
         this.props.addGarden(this.state)
-        alert('Garden Successfully Added')
-        //reset state
         this.setState({
             name: '',
             feels: '',
             date: ''
         })
-        console.log(this)
-        
-
     }
 
     render() {
@@ -54,10 +47,9 @@ class GardenInput extends React.Component {
 
                 </form>
             </div>
-        )
+     )
     }
-
-
-}
+  }
+  
 
 export default connect(null, {addGarden})(GardenInput)

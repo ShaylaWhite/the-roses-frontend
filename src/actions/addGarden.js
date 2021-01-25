@@ -1,6 +1,6 @@
 export const addGarden = (data) => {
 
-return (dispatch) => {
+  return (dispatch) => {
     fetch('http://localhost:3000/api/v1/gardens', {
       headers: {
         'Content-Type': 'application/json',
@@ -14,7 +14,6 @@ return (dispatch) => {
   }
 
 }
-
 // return the dispatch allowed by thunk
 //send to the creat method viz fetch 
 //pass in 2nd a object -> sending to backend type 

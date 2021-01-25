@@ -4,24 +4,20 @@ import {addRose} from '../actions/addRose'
 
 
 
-class RoseInput  extends React.Component {
+class RoseInput extends React.Component {
+  state = {
+         petals: '',
+         thorns: '',
+         water: ''  
 
-    constructor(){
-        super()
-            this.state = {
-            petals: '',
-            thorns: '',
-            water: ''
-            }
+      } 
   
-    }
- 
-    handleChange = (e) => {
-        e.preventDefault()
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
+
+  handleChange = (e) => {
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+}
 
     handleSubmit = (e) => {
         e.preventDefault()
@@ -32,12 +28,11 @@ class RoseInput  extends React.Component {
             thorns: '',
             water: ''
         })
-
     }
 
 
     render() {
-        return (
+      return (
           <div>
             <form onSubmit={this.handleSubmit}>
               <label>What Are Roses For Today?</label>
