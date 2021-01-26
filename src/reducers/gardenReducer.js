@@ -6,14 +6,9 @@ export default function gardenReducer(state = {gardens: []}, action) {
             return {...state, gardens: [...state.gardens, action.payload]}
 
             case 'ADD_ROSE':
-              let gardens = state.gardens.map(garden => {
-                if (garden.id === action.payload.id) {
-                  return action.payload
-                } else {
-                  return garden
-                }
-              })
-              return {...state, gardens: gardens}
+      
+           return{...state, rose: [action.payload.data]}
+        
             case 'DELETE_ROSE':
               let gardenstwo = state.gardens.map(garden => {
                 if (garden.id === action.payload.id ) {

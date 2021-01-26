@@ -4,16 +4,17 @@ import {Route, Link} from 'react-router-dom'
 
 
 const Gardens = (props) => {
-debugger
+let gardens = props.gardens
 
          return (
     <div>
       {props.gardens.map(garden =>
-        <li key={garden.id}>
-          <Link to={`/gardens/${garden.id}`}>{garden.name} - {garden.date} - {garden.feels} </Link>
-        </li> )}
+        <ul key={garden.id}>
+           Garden  <Link to={`/gardens/${garden.attributes.id}`}>{garden.attributes.name} </Link>
+            <br/> Feels for the day: | {garden.attributes.feels} |
+            <br/> | {garden.attributes.date} |  
+        </ul> )}
     </div>
-
   )
 }
 

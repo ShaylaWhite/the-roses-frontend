@@ -1,16 +1,14 @@
 import React from 'react'
 import RoseInput from '../components/RoseInput'
-import Roses from '../components/Roses'
+import Rose from '../components/Rose'
 
 class RosesContainer extends React.Component {
 
-
   render() {
-
     return (
       <div>
           <RoseInput garden={this.props.garden}/><br/>
-          <Roses roses={this.props.garden && this.props.garden.roses}/>
+          <Rose rose={this.props.rose}/>
       </div>
 
     )

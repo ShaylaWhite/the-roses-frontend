@@ -6,6 +6,26 @@ import RosesContainer from '../containers/RosesContainer'
 const Garden = (props) => {
     console.log(props)
 
+  let garden = props.gardens[props.match.params.id - 1]
+
+    console.log(garden) 
+    return (
+        <div>
+    
+      <h1>
+        Garden : {garden ? garden.attributes.name : null} <br/>  
+      </h1>
+
+      <h3>
+    posted on |{garden ? garden.attributes.date : null} |
+       </h3>
+       
+      <RosesContainer garden={garden}/><br/>
+     
+    </div>
+    
+    )
+
 }
 
 
