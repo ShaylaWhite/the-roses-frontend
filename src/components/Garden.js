@@ -34,6 +34,7 @@ export default Garden
 
 
 
+
 // const Garden = (props) => {
 // let garden = props
 // console.log(props.garden.attributes)

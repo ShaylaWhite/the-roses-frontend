@@ -7,7 +7,7 @@ console.log("roses")
 console.log(props)
   // state = {} 
   
-  let gardenRoses = (props.roses) ? (props.roses.filter(rose => rose.attributes.garden_id == props.gardenId)) : null;
+  let gardenRoses = (props.roses) ? (props.roses.filter(rose => rose.attributes.garden_id === props.gardenId)) : null;
   //   [props.match.params.id - 1])) : null;
 console.log(gardenRoses)
   // const handleDelete = (rose) => {

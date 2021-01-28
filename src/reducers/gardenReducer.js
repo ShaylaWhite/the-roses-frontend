@@ -8,7 +8,7 @@ export default function gardenReducer(state = {gardens: []}, action) {
 
             case 'ADD_ROSE':
       
-              return{...state, rose: [action.payload.data]}
+              return{...state, roses: [...state.roses, action.payload.data]}
               //object key & pairs 
 
               case 'FETCH_ROSES':
