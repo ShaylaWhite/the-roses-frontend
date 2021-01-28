@@ -1,15 +1,15 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
 
 import RosesContainer from '../containers/RosesContainer'
 
 const Garden = (props) => {
     console.log(props)
 
-  let garden = props.gardens[props.match.params.id - 1]
+    let garden = (props.gardens) ? (props.gardens[props.match.params.id - 1]) : null;
 
-    console.log(garden) 
+
     return (
+
         <div>
     
       <h1>
@@ -20,7 +20,7 @@ const Garden = (props) => {
     posted on |{garden ? garden.attributes.date : null} |
        </h3>
        
-      <RosesContainer garden={garden}/><br/>
+       {garden ? <RosesContainer garden={garden}/> : null }
      
     </div>
     
@@ -29,7 +29,7 @@ const Garden = (props) => {
 }
 
 
- 
+ ///stateless///parent 
 export default Garden
 
 

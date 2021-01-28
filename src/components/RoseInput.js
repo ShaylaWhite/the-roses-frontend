@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {addRose} from '../actions/addRose'
 
 
 
-class RoseInput extends React.Component {
-  state = {
-         petals: '',
-         thorns: '',
-         water: ''  
+class RoseInput extends Component { 
+  constructor(){
+    super()
+        this.state = {
+          petals: '',
+          thorns: '',
+          water: ''  
 
       } 
   
-
+    }
   handleChange = (e) => {
     this.setState({
         [e.target.name]: e.target.value
@@ -68,4 +70,4 @@ export default connect(null, {addRose})(RoseInput)
 
 
 
-
+///Parent components holding state should be like the motherboard of state

@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {addGarden} from '../actions/addGarden'
 
+import { Link } from 'react-router-dom'
+
 class GardenInput extends React.Component {
  
 
@@ -31,6 +33,8 @@ class GardenInput extends React.Component {
     render() {
         return (
             <div>
+                <br/>
+                <br/>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name Your Garden:</label>
                     <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/>
@@ -42,8 +46,11 @@ class GardenInput extends React.Component {
                     <br/>
                     <label>Date</label>
                     <input type='date' placeholder='Date' value={this.state.date} name="date" onChange={this.handleChange}/>
+                    <br/>
                     <input type="submit"/>
-
+                     <br/>
+                     <br/>
+                    <Link to="/gardens"> See New Garden </Link>
 
                 </form>
             </div>
@@ -53,3 +60,5 @@ class GardenInput extends React.Component {
   
 
 export default connect(null, {addGarden})(GardenInput)
+
+/////Parent components holding state should be like the motherboard of state

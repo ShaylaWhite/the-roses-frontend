@@ -1,10 +1,8 @@
 import React from 'react'
-import Garden from './Garden'
-import {Route, Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Gardens = (props) => {
-let gardens = props.gardens
 
          return (
     <div>
@@ -17,6 +15,8 @@ let gardens = props.gardens
     </div>
   )
 }
+
+ ///stateless///
 
 export default Gardens
 

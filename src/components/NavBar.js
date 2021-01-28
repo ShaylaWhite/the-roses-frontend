@@ -14,6 +14,9 @@ const NavBar = () => {
     </div>
 
   )
-}
+} 
+
+
+ ///stateless///
 
 export default NavBar
